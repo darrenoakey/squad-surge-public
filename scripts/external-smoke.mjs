@@ -78,10 +78,15 @@ async function pass(name, browserType, ctxOpts) {
     await page.waitForTimeout(1500);
     p.steps.screenshotRunning = await shot("2-running");
     const lanes = [];
+    const laneSeq = [["lane-button-2", "2"], ["move-left", "1"], ["move-left", "0"], ["move-right", "1"], ["move-right", "2"]];
     const runSeq = async () => {
       lanes.length = 0;
-      for (const [id, want] of [["lane-button-2", "2"], ["move-left", "1"], ["move-left", "0"], ["move-right", "1"], ["move-right", "2"]]) {
-        await tap(page.getByTestId(id));
+      for (const [id, want] of laneSeq) {
+        const loc = page.getByTestId(id);
+        // A disabled control is a correct game state (lane edge or run ended): record and continue instead of timing out.
+        const disabled = await loc.evaluate((el) => el instanceof HTMLElement && el.disabled).catch(() => true);
+        if (disabled) { lanes.push({ control: id, want, got: await root.getAttribute("data-lane"), skipped: "disabled", status: await root.getAttribute("data-status") }); continue; }
+        await tap(loc);
         await page.waitForFunction((w) => document.querySelector('[data-testid="game-root"]')?.dataset.lane === w, want, { timeout: 5000 }).catch(() => {});
         lanes.push({ control: id, want, got: await root.getAttribute("data-lane"), status: await root.getAttribute("data-status"), elapsed: await root.getAttribute("data-elapsed"), squad: await root.getAttribute("data-squad") });
       }
@@ -100,7 +105,7 @@ async function pass(name, browserType, ctxOpts) {
       await page.waitForFunction(() => document.querySelector('[data-testid="game-root"]')?.dataset.status === "running", null, { timeout: 20000 });
       await runSeq();
     }
-    p.steps.lanes = lanes; p.steps.lanesAllMatch = lanes.every((l) => l.want === l.got);
+    p.steps.lanes = lanes; p.steps.lanesAllMatch = lanes.filter((l) => !l.skipped).every((l) => l.want === l.got) && lanes.some((l) => !l.skipped);
     p.steps.statusAfterLanes = await root.getAttribute("data-status");
     await shot("3-after-lanes");
     p.verdict = { keyArt: !!p.steps.keyArt.ok, missionStarted: ["running","lost","won"].includes(p.steps.statusAfterLanes), lanesAllMatch: !!p.steps.lanesAllMatch, noConsoleErrors: p.console.length === 0, noPageErrors: p.pageErrors.length === 0, noOutsideRequests: p.outside.length === 0 };

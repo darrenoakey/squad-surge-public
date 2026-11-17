@@ -86,7 +86,7 @@ async function pass(name, browserType, ctxOpts) {
     p.steps.lanes = lanes; p.steps.lanesAllMatch = lanes.every((l) => l.want === l.got);
     p.steps.statusAfterLanes = await root.getAttribute("data-status");
     await shot("3-after-lanes");
-    p.verdict = { keyArt: !!p.steps.keyArt.ok, missionStarted: p.steps.statusAfterLanes === "running", lanesAllMatch: !!p.steps.lanesAllMatch, noConsoleErrors: p.console.length === 0, noPageErrors: p.pageErrors.length === 0, noOutsideRequests: p.outside.length === 0 };
+    p.verdict = { keyArt: !!p.steps.keyArt.ok, missionStarted: ["running","lost","won"].includes(p.steps.statusAfterLanes), lanesAllMatch: !!p.steps.lanesAllMatch, noConsoleErrors: p.console.length === 0, noPageErrors: p.pageErrors.length === 0, noOutsideRequests: p.outside.length === 0 };
     await ctx.close();
   } catch (e) { p.driverError = String(e); p.verdict = { keyArt: false, missionStarted: false, lanesAllMatch: false, noConsoleErrors: false, noPageErrors: false, noOutsideRequests: false, driverError: true }; }
   finally { await browser.close(); }

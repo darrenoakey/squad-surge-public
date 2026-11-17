@@ -10,12 +10,12 @@ import { chromium, webkit } from "playwright";
 const BASE = "https://darrenoakey.github.io/squad-surge-public/";
 const OUT = process.env.SMOKE_OUT ?? "smoke-out"; mkdirSync(OUT, { recursive: true });
 const FILES = [
-  ["index.html", 826, "text/html"],
-  ["assets/index-Dy8xYNN9.js", 661033, "javascript"],
-  ["assets/index-bIbkL0Jh.css", 21613, "text/css"],
+  ["index.html", 847, "text/html"],
+  ["assets/index-Dy8xYNN9.js", 661040, "javascript"],
+  ["assets/index-bIbkL0Jh.css", 21648, "text/css"],
   ["favicon.svg", 507, "svg"],
   ["THIRD-PARTY-NOTICES.txt", 12315, "text/plain"],
-  ["LICENSE", 1069, "text/plain"],
+  ["LICENSE", 1069, "octet-stream"],
   ["art/key-art-menu.jpg", 486222, "jpeg"],
   ["assets/inter-latin-400-normal-C38fXH4l.woff2", 23664, "font"],
   ["assets/inter-latin-600-normal-LgqL8muc.woff2", 24452, "font"],
@@ -24,15 +24,16 @@ const FILES = [
   ["assets/barlow-condensed-latin-800-normal-BKzMuPgK.woff2", 22464, "font"],
 ];
 const EXPECT_SHA = {
-  "assets/index-Dy8xYNN9.js": null, "assets/index-bIbkL0Jh.css": null,
   "art/key-art-menu.jpg": "c11518cd52568344351436151afa6f4fb2a5440894dba5adef7e4a5c43ef2fa1",
   "favicon.svg": "a865fc82ed917c575311c619b16c57adfc9d05932002b2c5da264bb9c63e3e1c",
   "THIRD-PARTY-NOTICES.txt": "255551902391d793a361bf0086fa7c2d0b9e6dc81dbef9727023773c80f5331c",
-  "assets/inter-latin-400-normal-C38fXH4l.woff2": "8909904ab6c872eb994093482a88a28eca2cd95912d7a6fecd72103b0dc07edc",
-  "assets/inter-latin-600-normal-LgqL8muc.woff2": "f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21f",
+  "assets/inter-latin-400-normal-C38fXH4l.woff2": "8909904ab6c872eb994093482a88a28eca2cd95912d7b6fecd72103b0dc07edc",
+  "assets/inter-latin-600-normal-LgqL8muc.woff2": "f9a06e79cd3a2a20951c0f0e28f66dd0e6d3fda73911d640a2125c8fcb78f21a",
   "assets/barlow-condensed-latin-700-normal-v1xN8_Wq.woff2": "3787a5a419171630e6890cfa47c4da067474d005cd0ff8dc11ec090fdc3ee2b8",
-  "assets/barlow-condensed-latin-800-italic-Cnej2eWp.woff2": "59b48100622b2dea510bbf9e98d02eecf20ea8ae000821877f2d470ec16ee55",
-  "assets/barlow-condensed-latin-800-normal-BKzMuPgK.woff2": "2515494e8cc2ca07c86ea78766cfa1047b796aa6ed5d66821c01d51dbb0b52bce",
+  "assets/barlow-condensed-latin-800-italic-Cnej2eWp.woff2": "59b48100622b2dea5b10bbf9e98d02eecf20ea8ae000821877f2d470ec16ee55",
+  "assets/barlow-condensed-latin-800-normal-BKzMuPgK.woff2": "2515494e8cc2ca07c86ea78766cfa104b796aa6ed5d66821c01d51dbb0b52bce",
+  "assets/index-Dy8xYNN9.js": "ca2ccdceffc0d98e9d7f083dd6b779ebc1bc5a0ba1449fa6bf32048d39aba03d",
+  "assets/index-bIbkL0Jh.css": "817d661ea080687b544a3fd17eea298a792c4974736d82158872804d54a6d46b"
 };
 const results = { base: BASE, startedAt: new Date().toISOString(), item1_files: [], passes: {}, verdict: {} };
 let ok1 = true;
@@ -77,7 +78,7 @@ async function pass(name, browserType, ctxOpts) {
     await page.waitForTimeout(1500);
     p.steps.screenshotRunning = await shot("2-running");
     const lanes = [];
-    for (const [id, want] of [["lane-button-0", "0"], ["lane-button-2", "2"], ["move-left", "1"], ["move-left", "0"], ["move-right", "1"]]) {
+    for (const [id, want] of [["lane-button-2", "2"], ["move-left", "1"], ["move-left", "0"], ["move-right", "1"], ["move-right", "2"]]) {
       await tap(page.getByTestId(id));
       await page.waitForFunction((w) => document.querySelector('[data-testid="game-root"]')?.dataset.lane === w, want, { timeout: 5000 }).catch(() => {});
       lanes.push({ control: id, want, got: await root.getAttribute("data-lane") });

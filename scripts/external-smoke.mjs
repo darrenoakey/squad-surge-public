@@ -78,10 +78,27 @@ async function pass(name, browserType, ctxOpts) {
     await page.waitForTimeout(1500);
     p.steps.screenshotRunning = await shot("2-running");
     const lanes = [];
-    for (const [id, want] of [["lane-button-2", "2"], ["move-left", "1"], ["move-left", "0"], ["move-right", "1"], ["move-right", "2"]]) {
-      await tap(page.getByTestId(id));
-      await page.waitForFunction((w) => document.querySelector('[data-testid="game-root"]')?.dataset.lane === w, want, { timeout: 5000 }).catch(() => {});
-      lanes.push({ control: id, want, got: await root.getAttribute("data-lane") });
+    const runSeq = async () => {
+      lanes.length = 0;
+      for (const [id, want] of [["lane-button-2", "2"], ["move-left", "1"], ["move-left", "0"], ["move-right", "1"], ["move-right", "2"]]) {
+        await tap(page.getByTestId(id));
+        await page.waitForFunction((w) => document.querySelector('[data-testid="game-root"]')?.dataset.lane === w, want, { timeout: 5000 }).catch(() => {});
+        lanes.push({ control: id, want, got: await root.getAttribute("data-lane"), status: await root.getAttribute("data-status"), elapsed: await root.getAttribute("data-elapsed"), squad: await root.getAttribute("data-squad") });
+      }
+    };
+    await runSeq();
+    // Auto-retry once if the run ended mid-sequence (status lost/won before the last input settled).
+    if (lanes.some((l) => l.want !== l.got) && ["lost", "won"].includes(await root.getAttribute("data-status"))) {
+      p.steps.laneRetryAfterRunEnd = true;
+      const card1b = page.getByTestId("mission-card").first();
+      await page.goto(BASE, { waitUntil: "load", timeout: 45000 });
+      await tap(card1b);
+      const deploy2 = page.getByTestId("deploy-button");
+      await deploy2.waitFor({ state: "visible", timeout: 15000 });
+      await page.waitForFunction(() => !document.querySelector('[data-testid="deploy-button"]')?.disabled, null, { timeout: 20000 });
+      await tap(deploy2);
+      await page.waitForFunction(() => document.querySelector('[data-testid="game-root"]')?.dataset.status === "running", null, { timeout: 20000 });
+      await runSeq();
     }
     p.steps.lanes = lanes; p.steps.lanesAllMatch = lanes.every((l) => l.want === l.got);
     p.steps.statusAfterLanes = await root.getAttribute("data-status");

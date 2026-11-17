@@ -7,7 +7,7 @@ permissions:
   contents: read
 jobs:
   smoke:
-    runs-on: ubuntu-latest   # GitHub-hosted standard runner, free for public repos
+    runs-on: ubuntu-24.04   # PW 1.56.1 supports 24.04 (latest=26.04 is not supported yet)   # GitHub-hosted standard runner, free for public repos
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4

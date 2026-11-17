@@ -1,0 +1,12 @@
+dist
+dist-portable
+dist.bak
+node_modules
+package-lock.json
+playwright-report
+test-results
+local
+artifacts
+output
+.gitignore
+LICENSE

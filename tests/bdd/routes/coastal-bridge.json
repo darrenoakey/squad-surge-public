@@ -1,0 +1,46 @@
+{
+  "levelId": "coastal-bridge",
+  "source": "playAutopilot(thinkEvery 0.25) on the real engine: win at 73.78s squad 42; replay late 0-0.3s at 10-60 fps all win",
+  "waypoints": [
+    {
+      "at": 2,
+      "lane": 0
+    },
+    {
+      "at": 16,
+      "lane": 1
+    },
+    {
+      "at": 17.5,
+      "lane": 0
+    },
+    {
+      "at": 27.5,
+      "lane": 2
+    },
+    {
+      "at": 33.75,
+      "lane": 0
+    },
+    {
+      "at": 34.5,
+      "lane": 1
+    },
+    {
+      "at": 61.75,
+      "lane": 0
+    },
+    {
+      "at": 65.25,
+      "lane": 1
+    },
+    {
+      "at": 68.75,
+      "lane": 0
+    },
+    {
+      "at": 72,
+      "lane": 1
+    }
+  ]
+}

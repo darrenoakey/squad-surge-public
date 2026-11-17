@@ -1,0 +1,50 @@
+{
+  "levelId": "industrial-port",
+  "source": "playAutopilot(thinkEvery 0.25) on the real engine: win at 81.02s squad 55; replay late 0-0.3s at 10-60 fps all win",
+  "waypoints": [
+    {
+      "at": 12.5,
+      "lane": 2
+    },
+    {
+      "at": 17,
+      "lane": 0
+    },
+    {
+      "at": 17.75,
+      "lane": 1
+    },
+    {
+      "at": 36,
+      "lane": 0
+    },
+    {
+      "at": 50,
+      "lane": 1
+    },
+    {
+      "at": 67.25,
+      "lane": 0
+    },
+    {
+      "at": 70.25,
+      "lane": 1
+    },
+    {
+      "at": 70.5,
+      "lane": 2
+    },
+    {
+      "at": 73.25,
+      "lane": 1
+    },
+    {
+      "at": 76.25,
+      "lane": 0
+    },
+    {
+      "at": 79.5,
+      "lane": 1
+    }
+  ]
+}

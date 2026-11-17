@@ -1,0 +1,36 @@
+# Dependencies / build output
+node_modules/
+dist/
+dist-portable/
+dist.bak/
+
+# Machine-local files (never commit)
+local/
+
+# Test output
+playwright-report/
+test-results/
+blob-report/
+
+# QA/browser-test runtime output; perf reports are kept per QA contract
+output/*
+!output/perf/
+!output/perf/**
+!output/.gitkeep
+# Tooling caches
+.vite/
+.eslintcache
+
+# Generated artifacts (not source) — except the five release screenshots.
+artifacts/*
+!artifacts/desktop-ready.png
+!artifacts/desktop-active.png
+!artifacts/mobile-ready.png
+!artifacts/mobile.png
+!artifacts/peak-density-mission3.png
+
+# Runtime output directory (except perf, unignored above)
+output/*
+
+# OS
+.DS_Store

@@ -1,0 +1,82 @@
+{
+  "levelId": "dusk-extraction",
+  "source": "playAutopilot(thinkEvery 0.25) on the real engine: win at 83.17s squad 50; replay late 0-0.3s at 10-60 fps all win",
+  "waypoints": [
+    {
+      "at": 2,
+      "lane": 0
+    },
+    {
+      "at": 11,
+      "lane": 1
+    },
+    {
+      "at": 14,
+      "lane": 2
+    },
+    {
+      "at": 18.5,
+      "lane": 1
+    },
+    {
+      "at": 19.25,
+      "lane": 2
+    },
+    {
+      "at": 24,
+      "lane": 1
+    },
+    {
+      "at": 29,
+      "lane": 2
+    },
+    {
+      "at": 36,
+      "lane": 1
+    },
+    {
+      "at": 45,
+      "lane": 2
+    },
+    {
+      "at": 47,
+      "lane": 1
+    },
+    {
+      "at": 49,
+      "lane": 0
+    },
+    {
+      "at": 69.75,
+      "lane": 1
+    },
+    {
+      "at": 70,
+      "lane": 2
+    },
+    {
+      "at": 72,
+      "lane": 1
+    },
+    {
+      "at": 74.5,
+      "lane": 2
+    },
+    {
+      "at": 75.75,
+      "lane": 1
+    },
+    {
+      "at": 77,
+      "lane": 0
+    },
+    {
+      "at": 79.25,
+      "lane": 1
+    },
+    {
+      "at": 81.75,
+      "lane": 0
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "last_run": "2026-11-16T13:13:14.458Z",
+  "source_hash": "2bafe1f497c06b59",
+  "total_duration_ms": 353953,
+  "passed": 53,
+  "failed": 0,
+  "scenarios": {
+    "bdd.spec.ts::bdd.spec.ts › Launch › Landing page presents the mission briefing": {
+      "duration_ms": 1861,
+      "history": [1874, 1861]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Runtime performance › An active run renders smoothly": {
+      "duration_ms": 7222,
+      "history": [7174, 7222]
+    },
+    "bdd.spec.ts::bdd.spec.ts › BDD suite integrity › every Given chains back to the landing page": {
+      "duration_ms": 3,
+      "history": [3, 3]
+    },
+    "bdd.spec.ts::bdd.spec.ts › BDD suite integrity › every step is bound to exactly one primitive": {
+      "duration_ms": 4,
+      "history": [4, 4]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Keyboard accessibility › Tab reaches every briefing control": {
+      "duration_ms": 795,
+      "history": [1184, 795]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Keyboard accessibility › Deploy using only the keyboard": {
+      "duration_ms": 1277,
+      "history": [1392, 1277]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Launch › Deploy the default mission": {
+      "duration_ms": 1095,
+      "history": [1067, 1095]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Mission lifecycle › The first run is a live battle": {
+      "duration_ms": 8216,
+      "history": [7843, 8216]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Mission lifecycle › A different mission after leaving a run is a live battle": {
+      "duration_ms": 10086,
+      "history": [10073, 10086]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Mission selection › Select a mission on the briefing [number=1]": {
+      "duration_ms": 814,
+      "history": [747, 814]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Mission selection › Select a mission on the briefing [number=2]": {
+      "duration_ms": 1020,
+      "history": [874, 1020]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Mission selection › Select a mission on the briefing [number=3]": {
+      "duration_ms": 768,
+      "history": [672, 768]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Mission selection › Deploy a chosen mission [number=2]": {
+      "duration_ms": 2552,
+      "history": [2433, 2552]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Mission selection › Deploy a chosen mission [number=3]": {
+      "duration_ms": 1926,
+      "history": [1858, 1926]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Mission lifecycle › Restarting a run is a live battle": {
+      "duration_ms": 11999,
+      "history": [11732, 11999]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Mission selection › Leave a paused run for the briefing": {
+      "duration_ms": 2487,
+      "history": [2532, 2487]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › Move between lanes with the keyboard [key=ArrowRight, lane=right]": {
+      "duration_ms": 915,
+      "history": [817, 915]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › Move between lanes with the keyboard [key=ArrowLeft, lane=left]": {
+      "duration_ms": 1065,
+      "history": [867, 1065]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › Move between lanes with the keyboard [key=d, lane=right]": {
+      "duration_ms": 1018,
+      "history": [947, 1018]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › Move between lanes with the keyboard [key=a, lane=left]": {
+      "duration_ms": 1084,
+      "history": [857, 1084]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › The squad cannot leave the left edge": {
+      "duration_ms": 818,
+      "history": [753, 818]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › The squad cannot leave the right edge": {
+      "duration_ms": 971,
+      "history": [878, 971]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › Move with the on-screen controls [control=Move left, lane=left]": {
+      "duration_ms": 902,
+      "history": [1032, 902]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › Move with the on-screen controls [control=Move right, lane=right]": {
+      "duration_ms": 1032,
+      "history": [956, 1032]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › Move with the on-screen controls [control=Left lane, lane=left]": {
+      "duration_ms": 1060,
+      "history": [945, 1060]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › Move with the on-screen controls [control=Right lane, lane=right]": {
+      "duration_ms": 1054,
+      "history": [1051, 1054]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Lane movement › Return to the center lane with its lane control": {
+      "duration_ms": 1144,
+      "history": [1059, 1144]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Run outcomes and progression › An idle squad is eventually defeated": {
+      "duration_ms": 39870,
+      "history": [39656, 39870]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Run outcomes and progression › Replay after defeat": {
+      "duration_ms": 47291,
+      "history": [47260, 47291]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Run outcomes and progression › Return to the briefing after defeat": {
+      "duration_ms": 39811,
+      "history": [40257, 39811]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Run outcomes and progression › Win a mission by steering with the keyboard [number=1]": {
+      "duration_ms": 75682,
+      "history": [75785, 75682]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Run outcomes and progression › Win a mission by steering with the keyboard [number=2]": {
+      "duration_ms": 82733,
+      "history": [83184, 82733]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Run outcomes and progression › Win a mission by steering with the keyboard [number=3]": {
+      "duration_ms": 88235,
+      "history": [88357, 88235]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Run outcomes and progression › Progress to the next mission after a victory [number=1, next=2]": {
+      "duration_ms": 84538,
+      "history": [84451, 84538]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Pause and resume › Pause with the keyboard": {
+      "duration_ms": 630,
+      "history": [803, 630]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Pause and resume › Pause with the pause control": {
+      "duration_ms": 813,
+      "history": [969, 813]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Pause and resume › A paused run is frozen": {
+      "duration_ms": 4371,
+      "history": [4257, 4371]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Pause and resume › Resume with the resume control": {
+      "duration_ms": 3284,
+      "history": [3473, 3284]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Pause and resume › Resume with the keyboard": {
+      "duration_ms": 2818,
+      "history": [2820, 2818]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Pause and resume › Restart from the pause overlay": {
+      "duration_ms": 2735,
+      "history": [2938, 2735]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Personal bests › A fresh profile shows every mission as unplayed": {
+      "duration_ms": 507,
+      "history": [533, 507]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Personal bests › A finished run records a personal best that survives reload": {
+      "duration_ms": 40213,
+      "history": [39975, 40213]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Run outcomes and progression › Progress to the next mission after a victory [number=2, next=3]": {
+      "duration_ms": 90793,
+      "history": [90168, 90793]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Responsive layout and evidence › Phone briefing fits the screen": {
+      "duration_ms": 863,
+      "history": [847, 863]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Responsive layout and evidence › Tap lane controls on a phone [control=Left lane, lane=left]": {
+      "duration_ms": 1499,
+      "history": [1204, 1499]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Responsive layout and evidence › Tap lane controls on a phone [control=Right lane, lane=right]": {
+      "duration_ms": 1343,
+      "history": [1141, 1343]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Responsive layout and evidence › Tap lane controls on a phone [control=Move left, lane=left]": {
+      "duration_ms": 1173,
+      "history": [1449, 1173]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Responsive layout and evidence › Deploy by tapping on a phone": {
+      "duration_ms": 5432,
+      "history": [5190, 5432]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Responsive layout and evidence › Tap lane controls on a phone [control=Move right, lane=right]": {
+      "duration_ms": 1154,
+      "history": [1482, 1154]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Responsive layout and evidence › Desktop briefing fits the screen": {
+      "duration_ms": 2222,
+      "history": [2192, 2222]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Sound preference › Toggled sound preference survives a reload": {
+      "duration_ms": 975,
+      "history": [1226, 975]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Sound preference › Toggling sound twice restores the original preference after reload": {
+      "duration_ms": 1308,
+      "history": [1316, 1308]
+    },
+    "bdd.spec.ts::bdd.spec.ts › Responsive layout and evidence › Desktop active run": {
+      "duration_ms": 7164,
+      "history": [7205, 7164]
+    }
+  },
+  "metrics": {
+    "landing_to_deploy_ready_ms": {
+      "value": 573,
+      "history": [587, 573]
+    },
+    "landing_dom_interactive_ms": {
+      "value": 7,
+      "history": [12, 7]
+    },
+    "landing_dom_content_loaded_ms": {
+      "value": 192,
+      "history": [207, 192]
+    },
+    "landing_load_ms": {
+      "value": 336,
+      "history": [357, 336]
+    },
+    "landing_first_contentful_paint_ms": {
+      "value": 364,
+      "history": [372, 364]
+    },
+    "baseline_fps": {
+      "value": 60,
+      "history": [60, 60]
+    },
+    "run_fps": {
+      "value": 60,
+      "history": [60, 60]
+    },
+    "run_worst_frame_ms": {
+      "value": 19,
+      "history": [20, 19]
+    },
+    "run_long_tasks": {
+      "value": 0,
+      "history": [0, 0]
+    },
+    "run_longest_task_ms": {
+      "value": 0,
+      "history": [0, 0]
+    },
+    "run_js_heap_mb": {
+      "value": 22,
+      "history": [25.2, 22]
+    }
+  }
+}
